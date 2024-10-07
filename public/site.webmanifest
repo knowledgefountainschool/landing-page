@@ -1,0 +1,38 @@
+{
+    "name": "Knowledge Fountain School",
+    "short_name": "KNFSchool",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#00008B",
+    "background_color": "#ADD8E6",
+    "display": "standalone",
+    "description": "Knowledge Fountain School is dedicated to nurturing academic excellence and character development.",
+    "start_url": "/",
+    "scope": "/",
+    "lang": "en",
+    "url": "https://knowledgefountainschool.com",
+    "cta": "https://wa.me/+2348033953178?text=Hello,%20I%20am%20interested%20in%20enrolling%20my%20ward%20and%20would%20like%20to%20book%20a%20tour.",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "categories": [
+        "education",
+        "learning",
+        "school"
+    ],
+    "creator": {
+        "name": "Joshua Edo",
+        "website": "https://joshuaedo.com",
+        "github": "https://github.com/joshuaedo",
+        "email": "josh@joshuaedo.com"
+    }
+}
