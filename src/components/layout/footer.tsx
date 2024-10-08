@@ -8,7 +8,7 @@ const Footer = () => {
   const { year } = useDate();
   return (
     <footer className='p-5 md:p-6 lg:p-7 xl:p-8 min-h-[35svh] md:min-h-[40svh] lg:min-h-[45svh] xl:min-h-[50svh] text-xs tracking-tighter font-semibold'>
-      <div className='border-y flex items-center justify-between py-12'>
+      <div className='border-y border-darker flex items-center justify-between py-12 gap-3'>
         <p>
           &#169; {year} {siteName}. All Rights Reserved.
         </p>
@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
 
       <div className='prose py-12'>
-        <ol type='1' className='space-y-4 text-[#76798D] font-medium'>
+        <ol type='1' className='space-y-4 font-medium'>
           <li>
             Our mission is to create an environment where students are empowered
             to achieve academic success and grow as individuals who contribute

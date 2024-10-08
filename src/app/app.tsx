@@ -9,7 +9,7 @@ export function App() {
   return (
     <BrowserRouter>
       <Providers>
-        <div className='relative font-san-francisco font-normal w-full max-w-screen'>
+        <div className='relative font-san-francisco font-normal w-full max-w-screen bg-brand text-darker'>
           <Header />
           <Main>
             <Router />

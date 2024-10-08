@@ -7,7 +7,7 @@ const AcademicsAndFacilitiesAndExtracurricularsSection =
   ({}: AcademicsAndFacilitiesAndExtracurricularsSectionProps) => {
     return (
       <Section id='academics'>
-        <Title>academicsAndFacilitiesAndExtracurricularsSection</Title>
+        <Title>academicsSection</Title>
         <div className='px-6 pt-7 pb-8'>
           <div className='w-full'></div>
         </div>
