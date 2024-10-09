@@ -3,9 +3,10 @@ import { FC } from 'react';
 interface VideoProps {
   src: string[];
   className?: string;
+  onLoad?: () => void;
 }
 
-const Video: FC<VideoProps> = ({ className, src: [mp4Src] }) => {
+const Video: FC<VideoProps> = ({ className, src: [mp4Src], onLoad }) => {
   return (
     <video
       data-nosnippet
@@ -15,6 +16,7 @@ const Video: FC<VideoProps> = ({ className, src: [mp4Src] }) => {
       loop
       muted
       autoPlay
+      onLoad={onLoad}
       className={`${className} object-cover w-full h-full`}
     >
       <source src={`${mp4Src}`} type='video/mp4' />

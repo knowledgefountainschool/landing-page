@@ -1,5 +1,4 @@
 import Section from '@/components/common/section';
-// import { DarkLabel } from '@/components/common/label';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
@@ -17,6 +16,7 @@ const HeroSection = ({}: HeroSectionProps) => {
       <div className='min-h-[94.5svh] relative'>
         <Video
           src={videos}
+          // onLoad={}
           className='absolute inset-0 z-[1] rounded-3xl shadow'
         />
         <div className='absolute inset-0 z-[2] text-white flex-center text-center bg-black/35 rounded-3xl shadow'>

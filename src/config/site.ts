@@ -27,13 +27,14 @@ export const siteConfig = {
   ],
   poster: [''],
   contact: {
-    address: 'Ibiaku Obio Ndobo, Uruan LGA, AKS, Nigeria',
+    address:
+      'Knowledge Fountain Street, Ibiaku Obio Ndobo, Uruan LGA, Akwa Ibom State, Nigeria',
     googleMapsUrl:
       'https://www.google.com/maps/place/4%C2%B056%2730.7%22N+8%C2%B000%2751.6%22E/@4.9414938,8.0128385,17z/data=!4m10!1m5!3m4!2zNMKwNTYnMzcuNiJOIDjCsDAxJzA2LjIiRQ!8m2!3d4.9437778!4d8.0183889!3m3!8m2!3d4.9418611!4d8.0143333?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D',
     phone: '08033953178',
     email: 'knowledgefountainschool@gmail.com',
     x: 'https://x.com/KNFSchool',
-    facebook: '_',
+    facebook: '',
     instagram: 'https://instagram.com/knowledgefountainschool',
   },
 };
