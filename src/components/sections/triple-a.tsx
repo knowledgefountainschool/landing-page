@@ -1,10 +1,10 @@
 import Section from '@/components/common/section';
 import Title from '@/components/common/title';
 
-interface AcademicsAndFacilitiesAndExtracurricularsSectionProps {}
+interface TripleASectionProps {}
 
-const AcademicsAndFacilitiesAndExtracurricularsSection =
-  ({}: AcademicsAndFacilitiesAndExtracurricularsSectionProps) => {
+const TripleASection =
+  ({}: TripleASectionProps) => {
     return (
       <Section id='academics'>
         <Title>academicsSection</Title>
@@ -15,4 +15,4 @@ const AcademicsAndFacilitiesAndExtracurricularsSection =
     );
   };
 
-export default AcademicsAndFacilitiesAndExtracurricularsSection;
+export default TripleASection;

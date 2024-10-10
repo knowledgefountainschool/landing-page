@@ -25,7 +25,6 @@ export const siteConfig = {
     // 'https://ums-wright.org/wp-content/uploads/2022/07/Spirit-10s.mp4',
     // 'https://ums-wright.org/wp-content/uploads/2022/07/Character-10s.mp4',
   ],
-  poster: [''],
   contact: {
     address:
       'Knowledge Fountain Street, Ibiaku Obio Ndobo, Uruan LGA, Akwa Ibom State, Nigeria',
@@ -38,3 +37,16 @@ export const siteConfig = {
     instagram: 'https://instagram.com/knowledgefountainschool',
   },
 };
+
+export const title = siteConfig.title;
+export const description = siteConfig.description;
+export const headline = siteConfig.headline;
+export const excerpt = siteConfig.excerpt;
+export const url = siteConfig.url;
+export const cta = siteConfig.cta;
+export const github = siteConfig.github;
+export const creator = siteConfig.creator;
+export const siteName = siteConfig.siteName;
+export const images = siteConfig.images;
+export const videos = siteConfig.videos;
+export const contact = siteConfig.contact;

@@ -1,6 +1,5 @@
-import GalleryMarquee from '@/components/common/gallery-marquee';
 import AboutSection from '@/components/sections/about';
-import AcademicsAndFacilitiesAndExtracurricularsSection from '@/components/sections/academics-and-facilities-and-extracurriculars';
+import TripleASection from '@/components/sections/triple-a';
 import CtaSection from '@/components/sections/cta';
 import DonationSection from '@/components/sections/donation';
 import HeroSection from '@/components/sections/hero';
@@ -10,12 +9,11 @@ interface HomePageProps {}
 
 const HomePage = ({}: HomePageProps) => {
   return (
-    <div className='space-y-6'>
+    <div className='space-y-32'>
       <HeroSection />
       <AboutSection />
-      <GalleryMarquee />
       <ValuesSection />
-      <AcademicsAndFacilitiesAndExtracurricularsSection />
+      <TripleASection />
       <DonationSection />
       <CtaSection />
     </div>
