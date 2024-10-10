@@ -1,4 +1,4 @@
-const transition = { duration: 1, ease: [0.76, 0, 0.24, 1] };
+const transition = { duration: 1.76, ease: [0.76, 0, 0.24, 1] };
 
 export const opacity = {
   initial: {
@@ -25,19 +25,30 @@ export const translate = {
   enter: () => ({
     y: 0,
     opacity: 1,
-    transition,
+    transition: { duration: 0.76, ease: [0.76, 0, 0.24, 1] },
   }),
   exit: () => ({
     y: '100%',
     opacity: 0,
-    transition,
+    transition: { duration: 0.76, ease: [0.76, 0, 0.24, 1] },
   }),
+};
+
+export const pageSlide = {
+  initial: {
+    y: 0,
+  },
+  exit: {
+    y: '-100%',
+    transition,
+  },
 };
 
 type Opacity = typeof opacity;
 type Translate = typeof translate;
+type PageSlide = typeof pageSlide;
 
-export type AnimationVariants = Opacity | Translate;
+export type AnimationVariants = Opacity | Translate | PageSlide;
 
 export const anim = (variants: AnimationVariants) => {
   return {

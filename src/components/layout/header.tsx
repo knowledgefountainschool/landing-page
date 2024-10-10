@@ -98,8 +98,8 @@ const Header = ({}: HeaderProps) => {
             <Link className='p-2' to='/#core-values'>
               Values
             </Link>
-            <Link className='p-2' to='/#academics'>
-              Academics
+            <Link className='p-2' to='/#triple-a'>
+              Triple A
             </Link>
             <Link className='p-2' to='/#donate'>
               Donate
@@ -120,7 +120,7 @@ const Header = ({}: HeaderProps) => {
               <nav className='flex gap-4 items-center'>
                 <Link to='/#about'>About</Link>
                 <Link to='/#core-values'>Core Values</Link>
-                <Link to='/#academics'>Academics</Link>
+                <Link to='/#triple-a'>Triple A</Link>
                 <Link to='/#donate'>Donate</Link>
               </nav>
             ) : (

@@ -73,9 +73,9 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
   }, [calculatedHeights]);
 
   return (
-    <div className='my-32 relative' style={{ height: containerHeight }}>
+    <div className='mt-32 relative' style={{ height: containerHeight }}>
       <div className='w-full absolute z-[2]'>
-        <Marquee autoFill className='space-x-3'>
+        <Marquee pauseOnClick pauseOnHover autoFill className='space-x-3'>
           {galleryMarqueeMedia.map((media, index) => {
             const height = calculatedHeights[index] ?? 30; // Fallback height if undefined
 

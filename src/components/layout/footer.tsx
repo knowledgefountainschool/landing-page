@@ -52,9 +52,9 @@ const Footer = () => {
                     'font-normal py-0 px-0 h-auto w-fit text-xs lg:text-sm',
                 })
               )}
-              to='/#academics'
+              to='/#triple-a'
             >
-              Academics
+              Triple A
             </Link>
             <Link
               className={cn(
