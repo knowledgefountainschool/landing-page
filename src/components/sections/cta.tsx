@@ -12,7 +12,7 @@ const { cta, siteName } = siteConfig;
 
 const CtaSection = ({}: CtaSectionProps) => {
   return (
-    <Section id='cta'>
+    <Section id='cta' className='mt-32'>
       <div className='rounded-3xl shadow min-h-[80svh] lg:min-h-[94.5svh] bg-darker text-white flex-center text-center relative'>
         <div className='p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-berlingske-serif font-semibold h-full'>
           <h4 className='uppercase tracking-[0.5em]'>Take A Tour</h4>

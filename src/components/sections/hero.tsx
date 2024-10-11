@@ -12,11 +12,10 @@ const { cta, videos, title, headline } = siteConfig;
 
 const HeroSection = ({}: HeroSectionProps) => {
   return (
-    <Section id='hero'>
+    <Section id='hero' className='py-5 '>
       <div className='min-h-[94.5svh] relative'>
         <Video
-          src={videos}
-          // onLoad={}
+          src={videos[0]}
           className='absolute inset-0 z-[1] rounded-3xl shadow'
         />
         <div className='absolute inset-0 z-[2] text-white flex-center text-center bg-black/35 rounded-3xl shadow'>

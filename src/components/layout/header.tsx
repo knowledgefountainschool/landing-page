@@ -88,7 +88,7 @@ const Header = ({}: HeaderProps) => {
           <nav
             className={cn(
               'flex items-center justify-evenly p-2 rounded-3xl w-full uppercase text-2xs md:text-xs font-medium',
-              'bg-darker text-white transition-all duration-300 ease-in-out',
+              'bg-darker border border-brand text-white transition-all duration-300 ease-in-out',
               isVisible ? 'scale-100' : 'scale-0 hidden'
             )}
           >

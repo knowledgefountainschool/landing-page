@@ -1,18 +1,56 @@
 import Section from '@/components/common/section';
 import { siteName } from '@/config/site';
 import { Icons } from '@/components/common/icons';
+import { BentoGrid } from '@/components/common/bento-grid';
+import Media from '../common/media';
+import { values } from '@/lib/values';
+
+interface ValueCardProps {
+  title: string;
+  description: string;
+  mediaSrc: string;
+  mediaAlt: string;
+  className?: string;
+}
+
+const ValueCard = ({
+  title,
+  description,
+  mediaSrc,
+  mediaAlt,
+  className = '',
+}: ValueCardProps) => {
+  return (
+    <div className={`relative rounded-3xl overflow-hidden ${className} shadow`}>
+      <Media
+        src={mediaSrc}
+        className='rounded-3xl object-cover h-full w-full'
+        alt={mediaAlt}
+      />
+      <div className='absolute inset-0 z-[2] text-white flex items-end bg-black/65 rounded-3xl shadow'>
+        <div className='p-5 md:p-6 lg:p-7 xl:p-8 container mx-auto space-y-4'>
+          <h3 className='font-berlingske-serif font-semibold text-3xl'>
+            {title}
+          </h3>
+          <h2 className='text-xs lg:text-sm leading-4 md:leading-5 lg:leading-6'>
+            {description}
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 interface ValuesSectionProps {}
 
 const ValuesSection = ({}: ValuesSectionProps) => {
   return (
-    <Section id='core-values' className=''>
-      {/* CARD */}
-      <div className='py-16 lg:py-32 rounded-3xl lg:min-h-[94.5svh] bg-darker text-white flex-center text-center relative shadow overflow-hidden h-full'>
-        <div className='p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-berlingske-serif font-semibold h-full'>
+    <Section id='core-values' className='my-32'>
+      <div className='py-16 lg:py-32 rounded-3xl lg:min-h-[94.5svh] bg-lighter text-darker blur-[0.1px] flex-center relative shadow overflow-hidden h-full'>
+        <div className='p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-berlingske-serif font-semibold h-full text-center'>
           <h4 className='uppercase tracking-[0.5em]'>Our Student Profile</h4>
           <span>
-            <Icons.longArrowWhite className='size-24' />
+            <Icons.longArrowDarker className='size-24' />
           </span>
           <h3 className='text-2xl leading-[2.25rem] md:leading-[2.5rem] lg:text-3xl lg:leading-[2.75rem] xl:text-4xl xl:leading-[3rem] tracking-wide'>
             Students at {siteName} embrace five core values that guide them in
@@ -23,6 +61,20 @@ const ValuesSection = ({}: ValuesSectionProps) => {
       </div>
 
       {/* VALUES */}
+      <BentoGrid className='mt-32'>
+        {values.map((value, index) => (
+          <ValueCard
+            key={index}
+            title={value.title}
+            description={value.description}
+            mediaSrc={value.mediaSrc}
+            mediaAlt={value.mediaAlt}
+            className={`col-span-1 h-[50vh] md:h-[60vh] lg:h-[70vh] ${
+              index === 3 ? 'lg:col-span-2' : ''
+            }`}
+          />
+        ))}
+      </BentoGrid>
     </Section>
   );
 };

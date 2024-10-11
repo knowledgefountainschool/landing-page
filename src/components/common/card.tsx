@@ -11,7 +11,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        'w-full pt-4 px-6 lg:px-8 pb-8 lg:pb-16 rounded-3xl border border-[rgba(255,255,255,0.10)] bg-lighter shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] group',
+        'w-full pt-4 px-6 lg:px-8 pb-8 lg:pb-16 rounded-3xl border border-[rgba(255,255,255,0.10)] bg-lighter shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset]',
         className
       )}
     >

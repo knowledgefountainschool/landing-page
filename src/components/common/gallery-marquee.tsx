@@ -1,11 +1,12 @@
 import { galleryMarqueeMedia } from '@/lib/db';
 import Marquee from 'react-fast-marquee';
-import Image from './image';
+// import Image from './image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useMemo, useCallback } from 'react';
 import { anim, opacity, translate } from '@/lib/anim';
 import { cn } from '@/lib/utils';
 import useMediaQuery from '@/hooks/use-media-query';
+import Media from './media';
 
 interface GalleryMarqueeProps {}
 
@@ -73,7 +74,7 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
   }, [calculatedHeights]);
 
   return (
-    <div className='mt-32 relative' style={{ height: containerHeight }}>
+    <div className='relative' style={{ height: containerHeight }}>
       <div className='w-full absolute z-[2]'>
         <Marquee pauseOnClick pauseOnHover autoFill className='space-x-3'>
           {galleryMarqueeMedia.map((media, index) => {
@@ -109,8 +110,8 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
                     : 'closed'
                 }
               >
-                <Image
-                  src={media.image}
+                <Media
+                  src={media?.video ? media?.video : media.image}
                   className={cn(
                     'h-full w-auto aspect-auto object-contain mx-3 cursor-pointer shadow'
                   )}
