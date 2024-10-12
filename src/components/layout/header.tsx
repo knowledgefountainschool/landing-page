@@ -107,7 +107,9 @@ const Header = ({}: HeaderProps) => {
           </nav>
         </div>
       )}
-      <header className={cn('fixed inset-x-0 p-10 z-50 flex items-center')}>
+      <header
+        className={cn('fixed inset-x-0 p-7 lg:p-10 z-50 flex items-center')}
+      >
         <div
           className={cn(
             'flex items-center p-5 md:p-6 lg:p-7 xl:p-8 rounded-3xl gap-5 lg:gap-4 w-full uppercase text-xs md:text-sm font-medium bg-opacity-95 transition-all duration-300 lg:duration-500 ease-in-out',

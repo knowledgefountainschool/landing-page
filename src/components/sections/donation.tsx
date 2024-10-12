@@ -13,8 +13,8 @@ interface DonationSectionProps {}
 const DonationSection = ({}: DonationSectionProps) => {
   const { animatedContainer } = useCardAnimation();
   return (
-    <div className='relative pt-32'>
-      <div className='w-screen bg-darker absolute -top-3 h-6 py-32' />
+    <div className='relative pt-16 lg:pt-32'>
+      <div className='w-screen bg-darker absolute -top-3 h-6 py-16 lg:py-32' />
       <Section
         id='donate'
         className='bg-darker text-white relative min-h-[50svh] md:min-h-[50svh] lg:min-h-[50svh] xl:min-h-[50svh]'
@@ -34,7 +34,7 @@ const DonationSection = ({}: DonationSectionProps) => {
           </div>
         </div>
 
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 pb-32'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-32 lg:gap-6 pb-32'>
           <Card className='bg-brand text-darker font-berlingske-serif space-y-4 flex-col-center pt-8 pb-16'>
             <div className='flex flex-row flex-shrink-0 justify-center items-center gap-2'>
               <div className={`circle-1 ${animatedContainer}`}>

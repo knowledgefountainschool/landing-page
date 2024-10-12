@@ -156,7 +156,7 @@ const media = {
   },
   studentsPlayingFootball: {
     name: 'students playing football',
-    image: '/images/(30).JPG',
+    image: '/images/(9).JPG',
     video: '',
   },
   cOmbination: {

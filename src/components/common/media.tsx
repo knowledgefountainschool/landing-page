@@ -65,7 +65,7 @@ const Media = ({ src, className, alt }: MediaProps) => {
           src={src}
           alt={alt}
           onError={handleMediaError}
-          className={cn('w-full h-full object-cover')}
+          className={cn('w-full h-full object-cover object-top')}
         />
       )}
     </div>
