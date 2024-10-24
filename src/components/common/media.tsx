@@ -1,6 +1,5 @@
 import Image from '@/components/common/image';
 import { cn } from '@/lib/utils';
-import { ImageIcon } from 'lucide-react';
 import { useEffect, useState, useCallback } from 'react';
 import Video from './video';
 
@@ -14,8 +13,6 @@ const Media = ({ src, className, alt }: MediaProps) => {
   const [mediaType, setMediaType] = useState<'image' | 'video' | 'unknown'>(
     'unknown'
   );
-
-  const [hasError, setHasError] = useState(false);
 
   const getMediaType = useCallback(
     (url: string): 'image' | 'video' | 'unknown' => {
@@ -40,31 +37,14 @@ const Media = ({ src, className, alt }: MediaProps) => {
     }
   }, [src, mediaType, getMediaType]);
 
-  const handleMediaError = () => {
-    setHasError(true);
-  };
-
-  const Error = () => (
-    <div className={cn(`relative`, className)}>
-      <div className='flex items-center justify-center w-full h-full'>
-        <ImageIcon />
-      </div>
-    </div>
-  );
-
-  if (hasError || !src) {
-    return <Error />;
-  }
-
   return (
     <div className={cn(`relative`, className)}>
       {mediaType === 'video' ? (
-        <Video src={src} onError={handleMediaError} />
+        <Video src={src} />
       ) : (
         <Image
           src={src}
           alt={alt}
-          onError={handleMediaError}
           className={cn('w-full h-full object-cover object-top')}
         />
       )}

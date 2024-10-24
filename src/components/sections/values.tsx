@@ -4,10 +4,12 @@ import { Icons } from '@/components/common/icons';
 import { BentoGrid } from '@/components/common/bento-grid';
 import Media from '../common/media';
 import { values } from '@/lib/values';
+import { cn } from '@/lib/utils';
 
 interface ValueCardProps {
   title: string;
   description: string;
+  index: number;
   mediaSrc: string;
   mediaAlt: string;
   className?: string;
@@ -16,6 +18,7 @@ interface ValueCardProps {
 const ValueCard = ({
   title,
   description,
+  index,
   mediaSrc,
   mediaAlt,
   className = '',
@@ -27,13 +30,25 @@ const ValueCard = ({
         className='rounded-3xl object-cover h-full w-full'
         alt={mediaAlt}
       />
-      <div className='absolute inset-0 z-[2] text-white flex items-end bg-black/65 rounded-3xl shadow h-full'>
-        <div className='lg:h-[55%]'>
+      <div
+        className={cn(
+          'absolute inset-0 z-[2] text-white flex bg-black/65 rounded-3xl shadow h-full',
+          index === 0 || index === 3 ? 'items-end' : 'items-start'
+        )}
+      >
+        <div className={cn(index === 0 || index === 3 ? 'lg:h-[55%]' : 'mt-8')}>
           <div className='p-5 md:p-6 lg:p-7 xl:p-8 container mx-auto space-y-4'>
-            <h3 className='font-berlingske-serif font-semibold text-3xl'>
+            <h3
+              className={cn(
+                'font-berlingske-serif font-semibold',
+                index === 3 ? 'text-3xl lg:text-5xl' : 'text-3xl'
+              )}
+            >
               {title}
             </h3>
-            <h2 className='text-base'>{description}</h2>
+            <h2 className={cn(index === 3 ? 'lg:text-xl' : 'text-base')}>
+              {description}
+            </h2>
           </div>
         </div>
       </div>
@@ -65,6 +80,7 @@ const ValuesSection = ({}: ValuesSectionProps) => {
         {values.map((value, index) => (
           <ValueCard
             key={index}
+            index={index}
             title={value.title}
             description={value.description}
             mediaSrc={value.mediaSrc}

@@ -1,6 +1,5 @@
 import Section from '@/components/common/section';
 import { CardDescription, CardTitle } from '@/components/common/card';
-import Image from '@/components/common/image';
 import { cn } from '@/lib/utils';
 import { useRef } from 'react';
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
@@ -8,6 +7,7 @@ import { media } from '@/lib/db';
 import useMediaQuery from '@/hooks/use-media-query';
 import { siteName } from '@/config/site';
 import { Icons } from '../common/icons';
+import Media from '../common/media';
 
 interface TripleASectionProps {}
 
@@ -57,9 +57,9 @@ const TripleASection = ({}: TripleASectionProps) => {
         'Foster your creativity and explore artistic expression through our vibrant arts programs. From visual arts to performing arts, the opportunities are endless.',
       images: [
         {
-          src: media.studentsPlayingFlutesOrTraditionalAttire.image,
+          src: media.studentInCostume.image,
           y: isLargeScreen ? md : 0,
-          alt: media.studentsPlayingFlutesOrTraditionalAttire.name,
+          alt: media.studentInCostume.name,
         },
         {
           src: media.studentsPlayingFlutesOrTraditionalAttire.image,
@@ -80,7 +80,8 @@ const TripleASection = ({}: TripleASectionProps) => {
           alt: media.childrenParticipatingInSports.name,
         },
         {
-          src: media.studentsPlayingFootball.image,
+          src: media.studentsPlayingFootball.video,
+          // media.studentsPlayingFootball.image,
           y: 0,
           alt: media.studentsPlayingFootball.name,
         },
@@ -117,21 +118,24 @@ const TripleASection = ({}: TripleASectionProps) => {
       >
         {sectionData.map(({ title, description, images, reverse }) => (
           <div
-            className={`grid grid-cols-1 lg:grid-cols-2 lg:min-h-[100vh] place-content-center place-items-center ${
-              reverse ? 'lg:flex-row-reverse' : ''
+            className={`lg:flex items-center justify-around lg:min-h-[100vh] ${
+              reverse ? 'lg:flex-reverse' : ''
             }`}
           >
             <div
-              className={cn('flex gap-4', reverse ? 'order-1 lg:order-2' : '')}
+              className={cn(
+                'flex gap-4 w-screen lg:w-auto',
+                reverse ? 'order-1 lg:order-2' : ''
+              )}
             >
               <motion.div
                 style={{ y: images[0].y }}
                 key={`i_${images[0].alt}}`}
               >
-                <Image
-                  className='lg:h-[40vh] aspect-square object-cover object-center'
+                <Media
+                  className='w-[20vh] lg:w-auto lg:h-[40vh] aspect-square object-cover object-center'
                   src={images[0].src}
-                  placeholder='blur'
+                  // placeholder='blur'
                   alt={images[0].alt}
                 />
               </motion.div>
@@ -139,10 +143,10 @@ const TripleASection = ({}: TripleASectionProps) => {
                 style={{ y: images[1].y }}
                 key={`i_${images[1].alt}}`}
               >
-                <Image
-                  className='lg:h-[60vh] aspect-square object-cover object-center'
+                <Media
+                  className='w-[30vh] lg:w-auto lg:h-[60vh] aspect-square object-cover object-center'
                   src={images[1].src}
-                  placeholder='blur'
+                  // placeholder='blur'
                   alt={images[1].alt}
                 />
               </motion.div>
@@ -155,10 +159,20 @@ const TripleASection = ({}: TripleASectionProps) => {
               )}
             >
               <div>
-                <CardTitle className='lg:text-6xl lg:max-w-sm lg:mr-auto lg:text-start lg:-ml-1'>
+                <CardTitle
+                  className={cn(
+                    'lg:text-6xl lg:max-w-sm lg:mr-auto lg:-ml-1',
+                    reverse ? 'lg:text-end' : 'lg:text-start'
+                  )}
+                >
                   {title}
                 </CardTitle>
-                <CardDescription className='lg:text-xl lg:max-w-sm lg:mr-auto lg:text-start text-lighter font-san-francisco'>
+                <CardDescription
+                  className={cn(
+                    'lg:text-xl lg:max-w-sm lg:mr-auto text-lighter font-san-francisco',
+                    reverse ? 'lg:text-end' : 'lg:text-start'
+                  )}
+                >
                   {description}
                 </CardDescription>
               </div>

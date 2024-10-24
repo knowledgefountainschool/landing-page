@@ -55,7 +55,8 @@ yarn-error.log*
 next-env.d.ts
 
 # turbo
-.
+.turbo
 
-# local images
+# local media
 /public/images
+/public/videos

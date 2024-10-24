@@ -5,17 +5,18 @@ import { Link } from 'react-router-dom';
 import { buttonVariants } from '@/components/common/button';
 import { ChevronRight } from 'lucide-react';
 import Video from '@/components/common/video';
+import { media } from '@/lib/db';
 
 interface HeroSectionProps {}
 
-const { cta, videos, title, headline } = siteConfig;
+const { cta, title, headline } = siteConfig;
 
 const HeroSection = ({}: HeroSectionProps) => {
   return (
     <Section id='hero' className='py-5 '>
       <div className='min-h-[94.5svh] relative'>
         <Video
-          src={videos[0]}
+          src={media.cOmbination.video}
           className='absolute inset-0 z-[1] rounded-3xl shadow'
         />
         <div className='absolute inset-0 z-[2] text-white flex-center text-center bg-black/35 rounded-3xl shadow'>

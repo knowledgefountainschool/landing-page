@@ -1,201 +1,288 @@
-const media = {
+const sharedMedia = {
   toddlersInClassSmiling: {
     name: 'toddlers in class smiling',
-    image: '/images/(1).JPG',
-    video: '',
+    image: '/images/toddler-in-class-smiling.webp',
+    video: '/videos/toddler-in-class-smiling.mp4',
   },
   studentsLearningInClassroom: {
     name: 'students learning in a classroom setting',
-    image: '/images/(2).JPG',
-    video: '',
+    image: '/images/teacher-in-class.webp',
+    video: '/videos/teacher-in-class.mp4',
   },
   entireSchoolBuilding: {
     name: 'entire school building',
-    image: '/images/(3).JPG',
-    video: '',
+    image: '/images/admin-and-nursery-blocks.webp',
+    video: '/videos/admin-and-nursery-blocks.mp4',
   },
   sunSkyAndSurroundings: {
     name: 'sun, sky, and surroundings',
-    image: '/images/(4).JPG',
-    video: '',
+    image: '/images/cloudy-sky.webp',
+    video: undefined,
   },
   childrenPlayingOutside: {
     name: 'children playing outside',
-    image: '/images/(5).JPG',
-    video: '',
-  },
-  childrenDancing: {
-    name: 'children dancing',
-    image: '/images/(6).JPG',
-    video: '',
+    image: '/images/children-playing-on-swing.webp',
+    video: '/videos/children-playing-on-swing.mp4',
   },
   childrenParticipatingInSports: {
     name: 'children participating in sports',
-    image: '/images/(7).JPG',
-    video: '',
-  },
-  childrenPlayingChess: {
-    name: 'children playing chess',
-    image: '/images/(8).JPG',
-    video: '',
+    image: '/images/children-in-sportswear.webp',
+    video: undefined,
   },
   childrenPraying: {
     name: 'children praying',
-    image: '/images/(9).JPG',
-    video: '',
+    image: '/images/child-praying.webp',
+    video: undefined,
   },
   class1: {
     name: 'Lower Reception',
-    image: '/images/(10).JPG',
-    video: '',
+    image: undefined,
+    video: undefined,
   },
   class2: {
     name: 'Reception One',
-    image: '/images/(11).JPG',
-    video: '',
+    image: '/images/reception-one.webp',
+    video: undefined,
   },
   class3: {
     name: 'Reception Two',
-    image: '/images/(12).JPG',
-    video: '',
+    image: '/images/reception-two.webp',
+    video: undefined,
   },
   class4: {
     name: 'Nursery One',
-    image: '/images/(13).JPG',
-    video: '',
+    image: '/images/nursery-one.webp',
+    video: undefined,
   },
   class5: {
     name: 'Nursery Two',
-    image: '/images/(14).JPG',
-    video: '',
+    image: undefined,
+    video: undefined,
   },
   class6: {
     name: 'Class Of Excellence One',
-    image: '/images/(15).JPG',
-    video: '',
+    image: '/images/coe-one.webp',
+    video: undefined,
   },
   class7: {
     name: 'Class Of Excellence Two',
-    image: '/images/(16).JPG',
-    video: '',
+    image: '/images/coe-two.webp',
+    video: undefined,
   },
   class8: {
     name: 'Class Of Excellence Three',
-    image: '/images/(18).JPG',
-    video: '',
+    image: '/images/coe-three.webp',
+    video: undefined,
   },
   class9: {
     name: 'Class Of Excellence Four',
-    image: '/images/(19).JPG',
-    video: '',
+    image: '/images/coe-four.webp',
+    video: undefined,
   },
   class10: {
     name: 'Class Of Excellence Five',
-    image: '/images/(20).JPG',
-    video: '',
+    image: undefined,
+    video: undefined,
   },
   staff: {
-    name: 'staff',
-    image: '/images/(18).JPG',
-    video: '',
+    name: 'knf staff',
+    image: '/images/staff.webp',
+    video: undefined,
   },
   proprietress: {
-    name: 'proprietress',
-    image: '/images/(19).JPG',
-    video: '',
+    name: 'the proprietress - mrs edo',
+    image: '/images/proprietress.webp',
+    video: undefined,
   },
   studentFocusingOnAssignment: {
     name: 'student focusing on an assignment',
-    image: '/images/(20).JPG',
-    video: '',
+    image: '/images/student-colouring-book.webp',
+    video: undefined,
   },
-  athletesTraining: {
-    name: 'athletes following a strict training routine',
-    image: '/images/(21).JPG',
-    video: '',
-  },
-  studentLeaderEnsuringTasks: {
-    name: 'student leader ensuring timely task completion',
-    image: '/images/(22).JPG',
-    video: '',
-  },
-  playersCollaborating: {
-    name: 'players collaborating on the sports field',
-    image: '/images/(23).JPG',
-    video: '',
-  },
-  studentsBrainstorming: {
-    name: 'students brainstorming ideas for a group project',
-    image: '/images/(24).JPG',
-    video: '',
+  studentsStaring: {
+    name: 'students starting at camera',
+    image: '/images/students-staring.webp',
+    video: undefined,
   },
   awardsCeremony: {
     name: 'awards ceremony recognizing academic excellence',
-    image: '/images/(25).JPG',
-    video: '',
-  },
-  teamCelebratingWin: {
-    name: 'team celebrating a championship win',
-    image: '/images/(26).JPG',
-    video: '',
-  },
-  studentsReflectingAtAssembly: {
-    name: 'students reflecting during morning assembly',
-    image: '/images/(27).JPG',
-    video: '',
-  },
-  studentsVolunteering: {
-    name: 'students volunteering at a local charity',
-    image: '/images/(28).JPG',
-    video: '',
+    image: '/images/student-receiving-award.webp',
+    video: undefined,
   },
   studentsPlayingFlutesOrTraditionalAttire: {
     name: 'students playing flutes or in traditional attire',
-    image: '/images/(29).JPG',
-    video: '',
+    image: '/images/students-in-traditional-attire.webp',
+    video: undefined,
+  },
+  studentInCostume: {
+    name: 'student in costume',
+    image: '/images/student-in-costume.webp',
+    video: undefined,
   },
   studentsPlayingFootball: {
     name: 'students playing football',
-    image: '/images/(9).JPG',
-    video: '',
+    image: '/images/students-holding-a-ball.webp',
+    video: '/videos/students-playing-football.mp4',
   },
   cOmbination: {
     name: 'combination',
     image: '',
-    video: '',
+    video: '/videos/hero.mp4',
   },
 };
 
-// sections
+const devMedia = { ...sharedMedia };
 
-const heroSectionMedia = [];
-const aboutSectionMedia = [];
+const prodMedia = {
+  toddlersInClassSmiling: {
+    ...sharedMedia.toddlersInClassSmiling,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786622/toddler-in-class-smiling_j5v89j.webp',
+    video:
+      'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729786464/toddler-in-class-smiling_wzte4h.mp4',
+  },
+  studentsLearningInClassroom: {
+    ...sharedMedia.studentsLearningInClassroom,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786620/teacher-in-class_nsk1hb.webp',
+    video:
+      'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729786467/teacher-in-class_ph8bdx.mp4',
+  },
+  entireSchoolBuilding: {
+    ...sharedMedia.entireSchoolBuilding,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786600/admin-and-nursery-blocks_tbqowa.webp',
+    video:
+      'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729786462/admin-and-nursery-blocks_riomou.mp4',
+  },
+  sunSkyAndSurroundings: {
+    ...sharedMedia.sunSkyAndSurroundings,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786602/cloudy-sky_wjwks4.webp',
+  },
+  childrenPlayingOutside: {
+    ...sharedMedia.childrenPlayingOutside,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786602/children-playing-on-swing_izdlil.webp',
+    video:
+      'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729786459/children-playing-on-swing_rzusxn.mp4',
+  },
+  childrenParticipatingInSports: {
+    ...sharedMedia.childrenParticipatingInSports,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786601/children-in-sportswear_zrrbyi.webp',
+  },
+  childrenPraying: {
+    ...sharedMedia.childrenPraying,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786600/child-praying_yjrcop.webp',
+  },
+  class1: {
+    ...sharedMedia.class1,
+  },
+  class2: {
+    ...sharedMedia.class2,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786610/reception-one_wwkyqq.webp',
+  },
+  class3: {
+    ...sharedMedia.class3,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786612/reception-two_jc73pt.webp',
+  },
+  class4: {
+    ...sharedMedia.class4,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786607/nursery-one_p0mntl.webp',
+  },
+  class5: {
+    ...sharedMedia.class5,
+  },
+  class6: {
+    ...sharedMedia.class6,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786604/coe-one_l3nxhy.webp',
+  },
+  class7: {
+    ...sharedMedia.class7,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786606/coe-two_zjmhec.webp',
+  },
+  class8: {
+    ...sharedMedia.class8,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786605/coe-three_vh0c1j.webp',
+  },
+  class9: {
+    ...sharedMedia.class9,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786603/coe-four_isrnfe.webp',
+  },
+  class10: {
+    ...sharedMedia.class10,
+  },
+  staff: {
+    ...sharedMedia.staff,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786612/staff_dw0o3q.webp',
+  },
+  proprietress: {
+    ...sharedMedia.proprietress,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786608/proprietress_r86kze.webp',
+  },
+  studentFocusingOnAssignment: {
+    ...sharedMedia.studentFocusingOnAssignment,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786612/student-colouring-book_sza1ht.webp',
+  },
+  studentsStaring: {
+    ...sharedMedia.studentsStaring,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786618/students-staring_ssknu4.webp',
+  },
+  awardsCeremony: {
+    ...sharedMedia.awardsCeremony,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786616/student-receiving-award_nj6kkq.webp',
+  },
+  studentsPlayingFlutesOrTraditionalAttire: {
+    ...sharedMedia.studentsPlayingFlutesOrTraditionalAttire,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786618/students-in-traditional-attire_raogxb.webp',
+  },
+  studentInCostume: {
+    ...sharedMedia.studentInCostume,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786614/student-in-costume_b0pjal.webp',
+  },
+  studentsPlayingFootball: {
+    ...sharedMedia.studentsPlayingFootball,
+    image:
+      'https://res.cloudinary.com/dt1wzz6ae/image/upload/v1729786616/students-holding-a-ball_vvrd60.webp',
+    video:
+      'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729786467/students-playing-football_t9tuts.mp4',
+  },
+  cOmbination: {
+    ...sharedMedia.cOmbination,
+    video:
+      'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729786473/hero_gr29jb.mp4',
+  },
+};
+
+const media = import.meta.env.DEV ? devMedia : prodMedia;
+// const media = prodMedia;
+
 const galleryMarqueeMedia = [
-  media.class1,
   media.class2,
   media.class3,
   media.class4,
-  media.class5,
   media.class6,
   media.class7,
   media.class8,
   media.class9,
-  media.class10,
   media.staff,
   media.proprietress,
 ];
-const valuesSectionMedia = [];
-const tripleASectionMedia = [];
-const donationSectionMedia = [];
-const ctaSectionMedia = [];
 
-export {
-  media,
-  heroSectionMedia,
-  aboutSectionMedia,
-  galleryMarqueeMedia,
-  valuesSectionMedia,
-  tripleASectionMedia,
-  donationSectionMedia,
-  ctaSectionMedia,
-};
+export { media, galleryMarqueeMedia };
