@@ -271,7 +271,6 @@ const prodMedia = {
 };
 
 const media = import.meta.env.DEV ? devMedia : prodMedia;
-// const media = prodMedia;
 
 const galleryMarqueeMedia = [
   media.class2,
