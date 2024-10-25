@@ -1,30 +1,37 @@
 import { FC } from 'react';
+import Image from './image';
+import { optimizeCloudinaryVideo } from '@/lib/utils';
+import useMediaQuery from '@/hooks/use-media-query';
 
 interface VideoProps {
   src: string;
+  fallbackImage: string;
   className?: string;
   onLoad?: () => void;
   onError?: () => void;
+  alt?: string;
 }
 
-const optimizeCloudinaryVideo = (url: string): string => {
-  // Find the position after "upload/"
-  const uploadIndex = url.indexOf('upload/');
-  if (uploadIndex === -1) return url;
-
-  const insertPosition = uploadIndex + 7; // "upload/".length = 7
-
-  // Insert optimization parameters
-  const optimizedUrl =
-    url.slice(0, insertPosition) +
-    'q_auto,f_auto,c_scale,w_auto/' +
-    url.slice(insertPosition);
-
-  return optimizedUrl;
-};
-
-const Video: FC<VideoProps> = ({ src, className, onLoad, onError }) => {
+const Video: FC<VideoProps> = ({
+  src,
+  alt,
+  fallbackImage,
+  className,
+  onLoad,
+  onError,
+}) => {
   const optimizedVideoUrl = optimizeCloudinaryVideo(src);
+  const { lg } = useMediaQuery();
+
+  if (!lg) {
+    return (
+      <Image
+        src={fallbackImage}
+        alt={alt}
+        className={`${className} object-cover w-full h-full`}
+      />
+    );
+  }
 
   return (
     <video

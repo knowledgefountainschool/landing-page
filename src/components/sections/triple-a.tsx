@@ -7,7 +7,8 @@ import { media } from '@/lib/db';
 import useMediaQuery from '@/hooks/use-media-query';
 import { siteName } from '@/config/site';
 import { Icons } from '../common/icons';
-import Media from '../common/media';
+import Video from '../common/video';
+import Image from '../common/image';
 
 interface TripleASectionProps {}
 
@@ -20,6 +21,7 @@ interface SectionData {
     alt: string;
   }[];
   reverse?: boolean;
+  hasVideo?: boolean;
 }
 
 const TripleASection = ({}: TripleASectionProps) => {
@@ -75,17 +77,19 @@ const TripleASection = ({}: TripleASectionProps) => {
         'Stay active and build resilience through our comprehensive athletics programs, aimed at developing both physical and mental strength.',
       images: [
         {
-          src: media.childrenParticipatingInSports.image,
+          src: isLargeScreen
+            ? media.studentsPlayingFootball.video
+            : media.studentsPlayingFootball.image,
           y: isLargeScreen ? md : 0,
-          alt: media.childrenParticipatingInSports.name,
-        },
-        {
-          src: media.studentsPlayingFootball.video,
-          // media.studentsPlayingFootball.image,
-          y: 0,
           alt: media.studentsPlayingFootball.name,
         },
+        {
+          src: media.childrenParticipatingInSports.image,
+          y: 0,
+          alt: media.childrenParticipatingInSports.name,
+        },
       ],
+      hasVideo: true,
     },
   ];
 
@@ -116,69 +120,82 @@ const TripleASection = ({}: TripleASectionProps) => {
         ref={container}
         className='grid grid-cols-1 space-y-16 lg:space-y-32 mt-16'
       >
-        {sectionData.map(({ title, description, images, reverse }) => (
-          <div
-            className={`lg:flex items-center justify-around lg:min-h-[100vh] ${
-              reverse ? 'lg:flex-reverse' : ''
-            }`}
-          >
+        {sectionData.map(
+          ({ title, description, images, reverse, hasVideo }) => (
             <div
-              className={cn(
-                'flex gap-4 w-screen lg:w-auto',
-                reverse ? 'order-1 lg:order-2' : ''
-              )}
+              className={`lg:flex items-center justify-around lg:min-h-[100vh] ${
+                reverse ? 'lg:flex-reverse' : ''
+              }`}
             >
-              <motion.div
-                style={{ y: images[0].y }}
-                key={`i_${images[0].alt}}`}
+              <div
+                className={cn(
+                  'flex gap-4 lg:w-auto',
+                  reverse ? 'order-1 lg:order-2' : ''
+                )}
               >
-                <Media
-                  className='w-[20vh] lg:w-auto lg:h-[40vh] aspect-square object-cover object-center'
-                  src={images[0].src}
-                  // placeholder='blur'
-                  alt={images[0].alt}
-                />
-              </motion.div>
-              <motion.div
-                style={{ y: images[1].y }}
-                key={`i_${images[1].alt}}`}
-              >
-                <Media
-                  className='w-[30vh] lg:w-auto lg:h-[60vh] aspect-square object-cover object-center'
-                  src={images[1].src}
-                  // placeholder='blur'
-                  alt={images[1].alt}
-                />
-              </motion.div>
-            </div>
+                <motion.div
+                  style={{ y: images[0].y }}
+                  key={`i_${images[0].alt}}`}
+                >
+                  {hasVideo ? (
+                    <Video
+                      fallbackImage={images[0].src}
+                      className='lg:h-[38vh] aspect-square object-cover object-center'
+                      src={images[0].src}
+                      alt={images[0].alt}
+                    />
+                  ) : (
+                    <Image
+                      className={cn(
+                        isLargeScreen
+                          ? 'lg:h-[38vh] aspect-square object-cover object-center'
+                          : 'h-full object-cover object-top'
+                      )}
+                      src={images[0].src}
+                      alt={images[0].alt}
+                    />
+                  )}
+                </motion.div>
+                <motion.div
+                  style={{ y: images[1].y }}
+                  key={`i_${images[1].alt}}`}
+                >
+                  <Image
+                    className='lg:h-[60vh] aspect-square object-cover object-center'
+                    src={images[1].src}
+                    alt={images[1].alt}
+                  />
+                </motion.div>
+              </div>
 
-            <div
-              className={cn(
-                'lg:flex justify-center items-center py-10',
-                reverse ? 'order-2 lg:order-1' : ''
-              )}
-            >
-              <div>
-                <CardTitle
-                  className={cn(
-                    'lg:text-6xl lg:max-w-sm lg:mr-auto lg:-ml-1',
-                    reverse ? 'lg:text-end' : 'lg:text-start'
-                  )}
-                >
-                  {title}
-                </CardTitle>
-                <CardDescription
-                  className={cn(
-                    'lg:text-xl lg:max-w-sm lg:mr-auto text-lighter font-san-francisco',
-                    reverse ? 'lg:text-end' : 'lg:text-start'
-                  )}
-                >
-                  {description}
-                </CardDescription>
+              <div
+                className={cn(
+                  'lg:flex justify-center items-center py-10',
+                  reverse ? 'order-2 lg:order-1' : ''
+                )}
+              >
+                <div>
+                  <CardTitle
+                    className={cn(
+                      'lg:text-6xl lg:max-w-sm lg:mr-auto lg:-ml-1',
+                      reverse ? 'lg:text-end' : 'lg:text-start'
+                    )}
+                  >
+                    {title}
+                  </CardTitle>
+                  <CardDescription
+                    className={cn(
+                      'lg:text-xl lg:max-w-sm lg:mr-auto text-lighter font-san-francisco',
+                      reverse ? 'lg:text-end' : 'lg:text-start'
+                    )}
+                  >
+                    {description}
+                  </CardDescription>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        )}
       </div>
     </Section>
   );

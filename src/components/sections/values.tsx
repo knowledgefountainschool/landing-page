@@ -2,9 +2,9 @@ import Section from '@/components/common/section';
 import { siteName } from '@/config/site';
 import { Icons } from '@/components/common/icons';
 import { BentoGrid } from '@/components/common/bento-grid';
-import Media from '../common/media';
 import { values } from '@/lib/values';
 import { cn } from '@/lib/utils';
+import Image from '../common/image';
 
 interface ValueCardProps {
   title: string;
@@ -25,9 +25,9 @@ const ValueCard = ({
 }: ValueCardProps) => {
   return (
     <div className={`relative rounded-3xl overflow-hidden ${className} shadow`}>
-      <Media
+      <Image
         src={mediaSrc}
-        className='rounded-3xl object-cover h-full w-full'
+        className='rounded-3xl object-cover h-full w-full object-top'
         alt={mediaAlt}
       />
       <div
@@ -37,7 +37,7 @@ const ValueCard = ({
         )}
       >
         <div className={cn(index === 0 || index === 3 ? 'lg:h-[55%]' : 'mt-8')}>
-          <div className='p-5 md:p-6 lg:p-7 xl:p-8 container mx-auto space-y-4'>
+          <div className='pb-8 p-5 md:p-6 lg:p-7 xl:p-8 container mx-auto space-y-4'>
             <h3
               className={cn(
                 'font-berlingske-serif font-semibold',

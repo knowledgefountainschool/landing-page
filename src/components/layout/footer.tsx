@@ -15,7 +15,7 @@ const Footer = () => {
       style={{ clipPath: 'polygon(0% 0, 100% 0%, 100% 100%, 0 100%)' }}
     >
       <div className='fixed bottom-0 inset-x-0 h-[100vh] p-5 md:p-6 lg:p-7 xl:p-8 divide-y divide-darker'>
-        <div className='pt-[10rem] py-12 grid grid-cols-3 max-w-3xl'>
+        <div className='pt-[12rem] lg:pt-[10rem] py-12 grid grid-cols-3 max-w-3xl'>
           <div className='flex flex-col space-y-4'>
             <label className='uppercase font-medium text-2xs lg:text-xs'>
               Sitemap
@@ -167,14 +167,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className='prose py-12'>
-          <ol type='1' className='space-y-4 font-medium'>
+        <div className='prose pt-4 pb-8 lg:py-12'>
+          <ol className='space-y-4 font-medium leading-5'>
             <li className='hidden lg:flex'>
               {siteName} encourages the pursuit of personal growth alongside
               academic success. We strive to foster a community that values
               integrity, compassion, and responsibility.
             </li>
-            <li>
+            <li className='hidden lg:flex'>
               {siteName} admits students of any race, color, national and ethnic
               origin to all the rights, privileges, programs, and activities
               generally accorded or made available to students at the school. It

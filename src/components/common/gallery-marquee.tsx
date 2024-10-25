@@ -1,26 +1,34 @@
 import { galleryMarqueeMedia } from '@/lib/db';
 import Marquee from 'react-fast-marquee';
-// import Image from './image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useMemo, useCallback } from 'react';
 import { anim, opacity, translate } from '@/lib/anim';
 import { cn } from '@/lib/utils';
 import useMediaQuery from '@/hooks/use-media-query';
-import Media from './media';
+import Image from './image';
+import Modal from './modal';
 
 interface GalleryMarqueeProps {}
 
 const GalleryMarquee = ({}: GalleryMarqueeProps) => {
-  const [selectedImage, setSelectedImage] = useState({
+  const [hoveredImage, setHoveredImage] = useState({
     isActive: false,
     index: 0,
     name: '',
     image: '',
-    video: '',
+  });
+
+  const [clickedImage, setClickedImage] = useState({
+    isActive: false,
+    index: 0,
+    name: '',
+    image: '',
   });
 
   const { isSmallMobile, isLargeMobile, isTablet, isLaptop, isDesktop } =
     useMediaQuery();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Define height ranges for each screen size
   const heightRanges = {
@@ -86,32 +94,39 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
                 key={index}
                 style={{ height: `${height}vh` }}
                 onMouseOver={() => {
-                  setSelectedImage({
+                  setHoveredImage({
                     isActive: true,
                     index,
                     name: media.name,
                     image: media.image,
-                    video: media.video,
                   });
                 }}
                 onMouseLeave={() => {
-                  setSelectedImage({
+                  setHoveredImage({
                     isActive: false,
                     index,
                     name: '',
                     image: '',
-                    video: '',
                   });
                 }}
                 variants={opacity}
                 animate={
-                  selectedImage.isActive && selectedImage.index !== index
+                  hoveredImage.isActive && hoveredImage.index !== index
                     ? 'open'
                     : 'closed'
                 }
               >
-                <Media
-                  src={media?.video ? media?.video : media.image}
+                <Image
+                  src={media.image}
+                  onClick={() => {
+                    setClickedImage({
+                      isActive: true,
+                      index,
+                      name: media.name,
+                      image: media.image,
+                    });
+                    setIsModalOpen(true);
+                  }}
                   className={cn(
                     'h-full w-auto aspect-auto object-contain mx-3 cursor-pointer shadow'
                   )}
@@ -123,7 +138,7 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
         </Marquee>
       </div>
       <AnimatePresence>
-        {selectedImage?.name && (
+        {hoveredImage?.name && (
           <div className='w-full absolute z-[1] top-14'>
             <motion.div className='h-full' {...anim(translate)}>
               <Marquee
@@ -131,10 +146,28 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
                 autoFill
                 className='h-full text-darker uppercase font-berlingske-serif text-2xl lg:text-3xl font-semibold '
               >
-                <span className='mx-5'>{selectedImage?.name}</span>
+                <span className='mx-5'>{hoveredImage?.name}</span>
               </Marquee>
             </motion.div>
           </div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isModalOpen && clickedImage.image && (
+          <Modal
+            onClose={() => setIsModalOpen(false)}
+            className='fixed inset-0 bg-darker z-50 flex-col-center py-16 space-y-8 text-center text-white font-berlingske-serif'
+          >
+            <Image
+              src={clickedImage.image}
+              className={cn('size-full object-contain')}
+              alt={clickedImage.name}
+            />
+            <div className='capitalize text-xl lg:text-2xl'>
+              {clickedImage.name}
+            </div>
+          </Modal>
         )}
       </AnimatePresence>
     </div>

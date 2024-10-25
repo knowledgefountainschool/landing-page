@@ -270,7 +270,7 @@ const prodMedia = {
   },
 };
 
-const media = import.meta.env.DEV ? devMedia : prodMedia;
+const media = !import.meta.env.DEV ? devMedia : prodMedia;
 
 const galleryMarqueeMedia = [
   media.class2,

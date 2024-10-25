@@ -159,7 +159,9 @@ const Header = ({}: HeaderProps) => {
                 className={cn(
                   buttonVariants({
                     variant: 'outline',
-                    className: 'text-white',
+                    className:
+                      'text-white text-2xs md:text-xs lg:text-sm px-4 md:px-5 lg:px-6',
+                    size: lg ? 'default' : 'sm',
                   })
                 )}
               >
