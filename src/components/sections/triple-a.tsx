@@ -123,6 +123,7 @@ const TripleASection = ({}: TripleASectionProps) => {
         {sectionData.map(
           ({ title, description, images, reverse, hasVideo }) => (
             <div
+              key={title}
               className={`lg:flex items-center justify-around lg:min-h-[100vh] ${
                 reverse ? 'lg:flex-reverse' : ''
               }`}

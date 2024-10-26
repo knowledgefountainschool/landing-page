@@ -29,7 +29,7 @@ const optimizeCloudinaryAudio = (url: string): string => {
 
   const optimizedUrl =
     url.slice(0, insertPosition) +
-    'q_auto,f_auto,fl_attachment/resource_type_video/' +
+    'q_auto,f_auto,fl_attachment/' +
     url.slice(insertPosition);
 
   return optimizedUrl;
