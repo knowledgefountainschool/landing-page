@@ -60,3 +60,4 @@ next-env.d.ts
 # local media
 /public/images
 /public/videos
+/public/audio

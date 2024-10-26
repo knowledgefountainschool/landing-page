@@ -21,4 +21,18 @@ const optimizeCloudinaryVideo = (url: string): string => {
   return optimizedUrl;
 };
 
-export { cn, optimizeCloudinaryVideo };
+const optimizeCloudinaryAudio = (url: string): string => {
+  const uploadIndex = url.indexOf('upload/');
+  if (uploadIndex === -1) return url;
+
+  const insertPosition = uploadIndex + 7;
+
+  const optimizedUrl =
+    url.slice(0, insertPosition) +
+    'q_auto,f_auto,fl_attachment/resource_type_video/' +
+    url.slice(insertPosition);
+
+  return optimizedUrl;
+};
+
+export { cn, optimizeCloudinaryVideo, optimizeCloudinaryAudio };

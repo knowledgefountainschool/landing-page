@@ -1,4 +1,4 @@
-const transition = { duration: 1.76, ease: [0.76, 0, 0.24, 1] };
+export const transition = { duration: 1.76, ease: [0.76, 0, 0.24, 1] };
 
 export const opacity = {
   initial: {
@@ -41,6 +41,44 @@ export const pageSlide = {
   exit: {
     y: '-100%',
     transition,
+  },
+};
+
+export const playerVariants = {
+  hidden: { x: 120, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      damping: 15,
+      mass: 1,
+    },
+  },
+  hover: {
+    scale: 1.02,
+    transition: {
+      type: 'spring',
+      stiffness: 400,
+      damping: 10,
+    },
+  },
+};
+
+export const dotVariants = {
+  playing: {
+    scale: 1,
+    opacity: 1,
+  },
+  idle: {
+    scale: [1, 1.5, 1],
+    opacity: [1, 0.7, 1],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    },
   },
 };
 

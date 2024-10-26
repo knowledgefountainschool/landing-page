@@ -6,6 +6,8 @@ import Main from '@/components/layout/main';
 import Footer from '@/components/layout/footer';
 import { PageLoader } from '@/components/layout/loader';
 import React from 'react';
+import Audio from '@/components/layout/audio';
+import { audio } from '@/lib/db';
 
 export function App() {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -20,6 +22,7 @@ export function App() {
           <Main>
             <Router />
           </Main>
+          <Audio playlist={audio} />
           <Footer />
         </div>
       </Providers>

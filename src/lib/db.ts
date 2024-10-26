@@ -284,4 +284,127 @@ const galleryMarqueeMedia = [
   media.proprietress,
 ];
 
-export { media, galleryMarqueeMedia };
+const devAudio = [
+  {
+    mp3: '/audio/mp3/children-learning.mp3',
+    aac: '/audio/aac/children-learning.aac',
+  },
+  {
+    mp3: '/audio/mp3/succession-main-title-theme.mp3',
+    aac: '/audio/aac/succession-main-title-theme.aac',
+  },
+  { mp3: '/audio/mp3/agni-kai.mp3', aac: '/audio/aac/agni-kai.aac' },
+  {
+    mp3: '/audio/mp3/oogway-ascends.mp3',
+    aac: '/audio/aac/oogway-ascends.aac',
+  },
+  {
+    mp3: '/audio/mp3/a-lannister-always-pays-his-debts.mp3',
+    aac: '/audio/aac/a-lannister-always-pays-his-debts.aac',
+  },
+  {
+    mp3: '/audio/mp3/american-prometheus.mp3',
+    aac: '/audio/aac/american-prometheus.aac',
+  },
+  { mp3: '/audio/mp3/ballerina.mp3', aac: '/audio/aac/ballerina.aac' },
+  {
+    mp3: '/audio/mp3/concerto-grosso-in-c-minor.mp3',
+    aac: '/audio/aac/concerto-grosso-in-c-minor.aac',
+  },
+  {
+    mp3: '/audio/mp3/cornfield-chase.mp3',
+    aac: '/audio/aac/cornfield-chase.aac',
+  },
+  { mp3: '/audio/mp3/hes-a-pirate.mp3', aac: '/audio/aac/hes-a-pirate.aac' },
+  { mp3: '/audio/mp3/idea-1.mp3', aac: '/audio/aac/idea-1.aac' },
+  {
+    mp3: '/audio/mp3/legend-of-the-martial-artist.mp3',
+    aac: '/audio/aac/legend-of-the-martial-artist.aac',
+  },
+  {
+    mp3: '/audio/mp3/love-theme-from-the-godfather.mp3',
+    aac: '/audio/aac/love-theme-from-the-godfather.aac',
+  },
+  { mp3: '/audio/mp3/magneto.mp3', aac: '/audio/aac/magneto.aac' },
+  { mp3: '/audio/mp3/new-home.mp3', aac: '/audio/aac/new-home.aac' },
+  {
+    mp3: '/audio/mp3/now-you-see-me.mp3',
+    aac: '/audio/aac/now-you-see-me.aac',
+  },
+  { mp3: '/audio/mp3/time.mp3', aac: '/audio/aac/time.aac' },
+];
+
+const prodAudio = [
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978937/children-learning_iv7hkz.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979102/children-learning_an3hto.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978951/succession-main-title-theme_ol6jgo.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979117/succession-main-title-theme_nuwl9h.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978940/agni-kai_mmjajh.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979107/agni-kai_pjaddy.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978955/oogway-ascends_brblvs.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979112/oogway-ascends_euzb6a.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978942/a-lannister-always_-pays-his-debts_f2afqz.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979106/a-lannister-always_-pays-his-debts_dngr5k.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978945/american-prometheus_ydwdlb.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979103/american-prometheus_kdyqgc.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978939/ballerina_pjbvk1.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979102/ballerina_bvz89h.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978946/concerto-grosso-in-c-minor_wmvegc.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979104/concerto-grosso-in-c-minor_sgajva.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978945/cornfield-chase_nmejdc.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979106/cornfield-chase_jz68so.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978947/hes-a-pirate_gfgqmi.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979106/hes-a-pirate_zl98hx.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978941/idea-1_hxyigo.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979107/idea-1_dtzlbh.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978942/legend-of-the-martial-artist_ycfnjc.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979106/legend-of-the-martial-artist_mnowxq.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978947/love-theme-from_-the-godfather_ryhxd4.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979111/love-theme-from_-the-godfather_igoow0.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978947/magneto_ntqufh.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979111/magneto_eesk8y.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978951/new-home_hvgrql.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979115/new-home_dgt1vq.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978954/now-you-see-me_nozlhe.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979111/now-you-see-me_zvub71.aac',
+  },
+  {
+    mp3: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729978954/time_qkojpv.mp3',
+    aac: 'https://res.cloudinary.com/dt1wzz6ae/video/upload/v1729979117/time_lmyrf8.aac',
+  },
+];
+
+const audio = import.meta.env.DEV ? devAudio : prodAudio;
+
+export { media, galleryMarqueeMedia, audio };
