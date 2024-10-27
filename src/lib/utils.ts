@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from 'clsx';
+import { useLocation } from 'react-router-dom';
 import { twMerge } from 'tailwind-merge';
 
 const cn = (...inputs: ClassValue[]) => {
@@ -35,4 +36,9 @@ const optimizeCloudinaryAudio = (url: string): string => {
   return optimizedUrl;
 };
 
-export { cn, optimizeCloudinaryVideo, optimizeCloudinaryAudio };
+const usePathname = () => {
+  const location = useLocation();
+  return location.pathname;
+};
+
+export { cn, optimizeCloudinaryVideo, optimizeCloudinaryAudio, usePathname };

@@ -1,16 +1,21 @@
 import { BrowserRouter } from 'react-router-dom';
 import Router from '@/components/layout/router';
 import Providers from '@/providers';
-import Header from '@/components/layout/header';
+
 import Main from '@/components/layout/main';
 import Footer from '@/components/layout/footer';
 import { PageLoader } from '@/components/layout/loader';
 import React from 'react';
 import Audio from '@/components/layout/audio';
 import { audio } from '@/lib/db';
+import useMediaQuery from '@/hooks/use-media-query';
+import DesktopHeader from '@/components/layout/desktop-header';
+import MobileHeader from '@/components/layout/mobile-header';
+import { Navbar } from '@/components/layout/navbar';
 
 export function App() {
   const [isLoading, setIsLoading] = React.useState(true);
+  const { lg } = useMediaQuery();
   return (
     <BrowserRouter>
       <Providers>
@@ -18,7 +23,8 @@ export function App() {
           {isLoading && (
             <PageLoader onLoadingComplete={() => setIsLoading(false)} />
           )}
-          <Header />
+          {lg ? <DesktopHeader /> : <MobileHeader />}
+          <Navbar />
           <Main>
             <Router />
           </Main>
