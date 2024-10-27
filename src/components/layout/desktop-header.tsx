@@ -6,6 +6,7 @@ import { Icons } from '@/components/common/icons';
 import { cn } from '@/lib/utils';
 import useMediaQuery from '@/hooks/use-media-query';
 import Link from '@/components/common/link';
+import TheaterToggle from '../common/theater-toggle';
 
 interface DesktopHeaderProps {}
 
@@ -96,6 +97,10 @@ const DesktopHeader = ({}: DesktopHeaderProps) => {
           </Link>
 
           <div className='ml-auto flex gap-4 items-center'>
+            <div className='flex gap-2 items-center'>
+              <TheaterToggle />
+            </div>
+
             <a
               href={cta}
               target='_blank'

@@ -149,8 +149,8 @@ const TripleASection = ({}: TripleASectionProps) => {
                     <Image
                       className={cn(
                         isLargeScreen
-                          ? 'lg:h-[38vh] aspect-square object-cover object-center'
-                          : 'h-full object-cover object-top'
+                          ? 'h-[38vh] aspect-square object-cover object-center'
+                          : 'h-full aspect-square object-cover object-top'
                       )}
                       src={images[0].src}
                       alt={images[0].alt}
@@ -162,7 +162,11 @@ const TripleASection = ({}: TripleASectionProps) => {
                   key={`i_${images[1].alt}}`}
                 >
                   <Image
-                    className='lg:h-[60vh] aspect-square object-cover object-center'
+                    className={cn(
+                      isLargeScreen
+                        ? 'h-[58vh] aspect-square object-cover object-center'
+                        : 'h-full aspect-square object-cover object-top'
+                    )}
                     src={images[1].src}
                     alt={images[1].alt}
                   />

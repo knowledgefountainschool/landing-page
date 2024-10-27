@@ -106,6 +106,10 @@ module.exports = {
           '0%': { transform: 'translateX(-200px)' },
           '100%': { transform: 'translateX(200px)' },
         },
+        subtlePulse: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -114,6 +118,7 @@ module.exports = {
         'slide-to-right': 'slide-to-right 1.5s infinite ease-in-out',
         shimmer: 'shimmer 3s linear infinite',
         move: 'move 5s linear infinite',
+        subtlePulse: 'subtlePulse 2s infinite ease-in-out',
       },
       fontSize: {
         '3xs': '0.5rem',

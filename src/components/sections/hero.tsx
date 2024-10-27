@@ -6,34 +6,29 @@ import { Link } from 'react-router-dom';
 import { buttonVariants } from '@/components/common/button';
 import { ChevronRight, Play } from 'lucide-react';
 import { media } from '@/lib/db';
-import Image from '../common/image';
-import useMediaQuery from '@/hooks/use-media-query';
+import Image from '@/components/common/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import Modal from '../common/modal';
+import Modal from '@/components/common/modal';
 
 interface HeroSectionProps {}
 
 const { cta, title, headline } = siteConfig;
 
 const HeroSection = ({}: HeroSectionProps) => {
-  const { lg } = useMediaQuery();
-  const [isTheaterMode, setIsTheaterMode] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
 
   const handleTheaterMode = () => {
-    setIsTheaterMode(true);
+    setIsModalOpen(true);
   };
 
   useEffect(() => {
-    if (isTheaterMode && videoRef.current) {
-      // Play video when theater mode is activated
+    if (isModalOpen && videoRef.current) {
       videoRef.current.currentTime = 0;
       videoRef.current.play();
-
-      // Set timeout to exit theater mode after 25 seconds
       timeoutRef.current = setTimeout(() => {
-        setIsTheaterMode(false);
+        setIsModalOpen(false);
       }, 25000);
     }
 
@@ -42,7 +37,7 @@ const HeroSection = ({}: HeroSectionProps) => {
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [isTheaterMode]);
+  }, [isModalOpen]);
 
   return (
     <Section id='hero' className='py-5'>
@@ -54,10 +49,10 @@ const HeroSection = ({}: HeroSectionProps) => {
         />
 
         <AnimatePresence>
-          {isTheaterMode && (
+          {isModalOpen && (
             <Modal
-              onClose={() => setIsTheaterMode(false)}
-              className='fixed inset-0 bg-darker z-50 flex-center'
+              onClose={() => setIsModalOpen(false)}
+              className='fixed inset-0 bg-darker z-50 flex-center px-4'
             >
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
@@ -87,39 +82,34 @@ const HeroSection = ({}: HeroSectionProps) => {
               {headline}
             </h3>
 
-            <div className='flex-center text-center gap-6 lg:-ml-10'>
+            <div className='flex flex-col lg:flex-row items-center justify-center text-center gap-6 lg:-ml-10'>
               <Link
                 to={cta}
                 className={cn(
-                  buttonVariants({
-                    size: 'lg',
-                  }),
-                  'group gap-1'
+                  buttonVariants({}),
+                  'group gap-1 text-xs flex items-center'
                 )}
                 target='_blank'
               >
                 Schedule A Tour{' '}
                 <div className='transition-transform duration-300 group-hover:translate-x-1'>
-                  <ChevronRight />
+                  <ChevronRight className='size-5 lg:size-6' />
                 </div>
               </Link>
-              {lg && (
-                <button
-                  onClick={handleTheaterMode}
-                  className={cn(
-                    buttonVariants({
-                      size: 'lg',
-                      variant: 'outline',
-                    }),
-                    'group gap-2'
-                  )}
-                >
-                  Play Reel
-                  <div className='transition-transform duration-300 group-hover:translate-x-1'>
-                    <Play className='size-4' />
-                  </div>
-                </button>
-              )}
+              <button
+                onClick={handleTheaterMode}
+                className={cn(
+                  buttonVariants({
+                    variant: 'outline',
+                  }),
+                  'group gap-2 text-xs flex items-center'
+                )}
+              >
+                Play Reel
+                <div className='transition-transform duration-300 group-hover:translate-x-1'>
+                  <Play className='size-3 lg:size-4' />
+                </div>
+              </button>
             </div>
           </div>
         </div>

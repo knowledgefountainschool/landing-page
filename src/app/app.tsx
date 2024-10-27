@@ -6,12 +6,12 @@ import Main from '@/components/layout/main';
 import Footer from '@/components/layout/footer';
 import { PageLoader } from '@/components/layout/loader';
 import React from 'react';
-import Audio from '@/components/layout/audio';
-import { audio } from '@/lib/db';
 import useMediaQuery from '@/hooks/use-media-query';
 import DesktopHeader from '@/components/layout/desktop-header';
 import MobileHeader from '@/components/layout/mobile-header';
 import { Navbar } from '@/components/layout/navbar';
+import AudioPlayer from '@/components/layout/audio-player';
+import { audio } from '@/lib/db';
 
 export function App() {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -28,8 +28,8 @@ export function App() {
           <Main>
             <Router />
           </Main>
-          <Audio playlist={audio} />
           <Footer />
+          <AudioPlayer playlist={audio} />
         </div>
       </Providers>
     </BrowserRouter>

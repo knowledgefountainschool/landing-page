@@ -4,6 +4,7 @@ import { menuSlide, scale, slide } from '@/lib/anim';
 import { navItems } from '@/lib/nav';
 import { Curve } from '../common/curve';
 import useNavbar from '@/hooks/use-navbar';
+import TheaterToggle from '../common/theater-toggle';
 
 const NavItems = ({ data, isActive }: any) => {
   const { title, href, index } = data || {};
@@ -54,6 +55,9 @@ export const Navbar = () => {
                   isActive={selectedIndicator === data.href}
                 />
               ))}
+              <div className='my-4'>
+                <TheaterToggle />
+              </div>
             </nav>
           </div>
           <Curve />
