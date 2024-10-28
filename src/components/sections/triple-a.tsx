@@ -131,12 +131,14 @@ const TripleASection = ({}: TripleASectionProps) => {
               <div
                 className={cn(
                   'flex gap-4 lg:w-auto',
-                  reverse ? 'order-1 lg:order-2' : ''
+                  reverse ? 'order-1 lg:order-2' : '',
+                  isLargeScreen ? '' : 'grid grid-cols-2'
                 )}
               >
                 <motion.div
                   style={{ y: images[0].y }}
                   key={`i_${images[0].alt}}`}
+                  className=''
                 >
                   {hasVideo ? (
                     <Video
@@ -150,7 +152,7 @@ const TripleASection = ({}: TripleASectionProps) => {
                       className={cn(
                         isLargeScreen
                           ? 'h-[38vh] aspect-square object-cover object-center'
-                          : 'h-full aspect-square object-cover object-top'
+                          : 'max-h-[200px] aspect-square object-cover object-top'
                       )}
                       src={images[0].src}
                       alt={images[0].alt}
@@ -165,7 +167,7 @@ const TripleASection = ({}: TripleASectionProps) => {
                     className={cn(
                       isLargeScreen
                         ? 'h-[58vh] aspect-square object-cover object-center'
-                        : 'h-full aspect-square object-cover object-top'
+                        : 'max-h-[200px] aspect-square object-cover object-top'
                     )}
                     src={images[1].src}
                     alt={images[1].alt}
