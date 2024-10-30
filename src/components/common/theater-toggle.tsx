@@ -14,7 +14,11 @@ const TheaterToggle = ({ className }: TheaterToggleProps) => {
 
   return (
     <div className={`flex items-center gap-2 ${className || ''}`}>
-      <Switch checked={isTheaterMode} onCheckedChange={toggleTheaterMode} />
+      <Switch
+        checked={isTheaterMode}
+        onCheckedChange={toggleTheaterMode}
+        aria-label='Toggle Theater Mode'
+      />
       {lg ? (
         <AudioLines
           className={cn(

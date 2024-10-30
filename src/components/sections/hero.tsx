@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Section from '@/components/common/section';
-import { siteConfig } from '@/config/site';
-import { cn } from '@/lib/utils';
+import { siteConfig, siteName } from '@/config/site';
+import { cn, optimizeCloudinaryImage } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import { buttonVariants } from '@/components/common/button';
 import { ChevronRight, Play } from 'lucide-react';
@@ -19,12 +19,24 @@ const HeroSection = ({}: HeroSectionProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
   const [isLoaded, setIsLoaded] = useState(false);
+  const optimizedImage = optimizeCloudinaryImage(media.class8.image);
 
   // Preload critical images
   useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = optimizedImage;
+    document.head.appendChild(link);
+
     const img = new Image();
-    img.src = media.class8.image;
+    img.src = optimizedImage;
     img.onload = () => setIsLoaded(true);
+
+    return () => {
+      document.head.removeChild(link);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleTheaterMode = () => {
@@ -58,14 +70,13 @@ const HeroSection = ({}: HeroSectionProps) => {
         />
 
         <ImageComponent
-          src={media.class8.image}
+          src={optimizedImage}
           alt='cOmbination'
           className={cn(
             ' absolute inset-0 z-[2] rounded-3xl object-cover h-full w-full transition-opacity duration-300',
             isLoaded ? 'opacity-100' : 'opacity-0'
           )}
           loading='eager'
-          decoding='async'
           fetchPriority='high'
           onLoad={() => setIsLoaded(true)}
         />
@@ -89,6 +100,7 @@ const HeroSection = ({}: HeroSectionProps) => {
                   className='w-full h-full object-cover rounded-3xl shadow-2xl'
                   playsInline
                   muted
+                  aria-label={`Reel of ${siteName}`}
                 />
               </motion.div>
             </Modal>
@@ -97,12 +109,12 @@ const HeroSection = ({}: HeroSectionProps) => {
 
         <div className='absolute inset-0 z-[4] text-white flex-center text-center bg-black/35 rounded-3xl shadow'>
           <div className='-mb-8 md:-mb-9 lg:-mb-10 xl:-mb-32 p-5 md:p-6 lg:p-7 xl:p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12'>
-            <h2 className='text-sm md:text-base lg:text-lg font-normal uppercase tracking-[0.5em]'>
+            <h1 className='text-sm md:text-base lg:text-lg font-normal uppercase tracking-[0.5em]'>
               {title}
-            </h2>
-            <h3 className='font-berlingske-serif font-semibold text-[1.67rem] leading-[2.15rem] md:text-4xl lg:text-5xl xl:text-6xl tracking-wide pb-16 lg:pb-0'>
+            </h1>
+            <h2 className='font-berlingske-serif font-semibold text-[1.67rem] leading-[2.15rem] md:text-4xl lg:text-5xl xl:text-6xl tracking-wide pb-16 lg:pb-0'>
               {headline}
-            </h3>
+            </h2>
 
             <div className='flex flex-col lg:flex-row items-center justify-center text-center gap-6 lg:-ml-10'>
               <Link

@@ -95,6 +95,9 @@
     @apply overflow-x-hidden flex flex-shrink h-fit whitespace-nowrap bg-inherit;
   }
 }
+body {
+  font-display: var(--fontsource-font-display, swap);
+}
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 html::-webkit-scrollbar {

@@ -21,16 +21,16 @@ const DonationSection = ({}: DonationSectionProps) => {
       >
         <div className='flex-center text-center relative overflow-hidden h-full pb-32'>
           <div className='p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-berlingske-serif font-semibold h-full'>
-            <h4 className='uppercase tracking-[0.5em]'>
+            <h1 className='uppercase tracking-[0.5em]'>
               Choose your way to make impact
-            </h4>
+            </h1>
             <span>
               <Icons.longArrowWhite className='size-24' />
             </span>
-            <h3 className='text-xl leading-[2.25rem] md:text-2xl md:leading-[2.5rem] lg:text-3xl lg:leading-[2.75rem] xl:text-4xl xl:leading-[3rem] tracking-wider'>
+            <h2 className='text-xl leading-[2.25rem] md:text-2xl md:leading-[2.5rem] lg:text-3xl lg:leading-[2.75rem] xl:text-4xl xl:leading-[3rem] tracking-wider'>
               Every donation builds a better future for our students and the{' '}
               {siteName} family.
-            </h3>
+            </h2>
           </div>
         </div>
 
