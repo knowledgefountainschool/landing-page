@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { buttonVariants } from '@/components/common/button';
 import { ChevronRight, Play } from 'lucide-react';
 import { media } from '@/lib/db';
-import Image from '@/components/common/image';
+import ImageComponent from '@/components/common/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Modal from '@/components/common/modal';
 
@@ -18,6 +18,14 @@ const HeroSection = ({}: HeroSectionProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Preload critical images
+  useEffect(() => {
+    const img = new Image();
+    img.src = media.class8.image;
+    img.onload = () => setIsLoaded(true);
+  }, []);
 
   const handleTheaterMode = () => {
     setIsModalOpen(true);
@@ -42,10 +50,24 @@ const HeroSection = ({}: HeroSectionProps) => {
   return (
     <Section id='hero' className='py-5'>
       <div className='min-h-[94.5svh] relative'>
-        <Image
+        <div
+          className={cn(
+            'absolute inset-0 z-[2] bg-darker rounded-3xl animate-pulse',
+            isLoaded && 'hidden'
+          )}
+        />
+
+        <ImageComponent
           src={media.class8.image}
           alt='cOmbination'
-          className='object-cover w-full h-full absolute inset-0 z-[2] rounded-3xl shadow'
+          className={cn(
+            ' absolute inset-0 z-[2] rounded-3xl object-cover h-full w-full transition-opacity duration-300',
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          )}
+          loading='eager'
+          decoding='async'
+          fetchPriority='high'
+          onLoad={() => setIsLoaded(true)}
         />
 
         <AnimatePresence>

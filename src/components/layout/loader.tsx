@@ -127,7 +127,11 @@ export const PageLoader = ({ onLoadingComplete }: PageLoaderProps) => {
               <Icons.logo />
             </div>
             <p className='text-light mb-4 text-3xl font-medium'>{progress}%</p>
-            <Progress value={progress} className='w-[20rem] h-2' />
+            <Progress
+              value={progress}
+              className='w-[20rem] h-2'
+              aria-label={`progress: ${progress}%`}
+            />
           </motion.div>
         </motion.div>
       )}

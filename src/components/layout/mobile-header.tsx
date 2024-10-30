@@ -58,6 +58,7 @@ const MobileHeader = ({}: MobileHeaderProps) => {
           <div className='ml-auto flex items-center'>
             <div
               role='button'
+              aria-label='Toggle Navbar'
               onClick={toggleNavbar}
               className={cn(
                 buttonVariants({

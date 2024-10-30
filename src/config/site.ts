@@ -21,14 +21,8 @@ export const siteConfig = {
     email: 'joshua.edo01@gmail.com',
   },
   siteName: 'Knowledge Fountain School',
-  images: ['/knfs-logo.png'],
-  videos: [
-    '/mind-10s.mp4',
-    // 'https://ums-wright.org/wp-content/uploads/2022/07/Mind-10s.mp4',
-    // 'https://ums-wright.org/wp-content/uploads/2022/07/Body-10s.mp4',
-    // 'https://ums-wright.org/wp-content/uploads/2022/07/Spirit-10s.mp4',
-    // 'https://ums-wright.org/wp-content/uploads/2022/07/Character-10s.mp4',
-  ],
+  images: ['/knfs-logo.webp'],
+  videos: [''],
   contact: {
     address:
       'Knowledge Fountain Street, Ibiaku Obio Ndobo, Uruan LGA, Akwa Ibom State, Nigeria',

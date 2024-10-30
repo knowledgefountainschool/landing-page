@@ -194,7 +194,7 @@ const Footer = () => {
                     buttonVariants({
                       variant: 'link',
                       className:
-                        'py-0 px-0 h-auto w-fit text-xs lg:text-sm font-medium break-all',
+                        'py-0 px-0 h-auto w-fit text-xs lg:text-sm font-medium break-all text-white',
                     })
                   )}
                   target='_blank'

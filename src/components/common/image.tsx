@@ -4,8 +4,8 @@ interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   blurDataURL?: string;
 }
 
-const Image: React.FC<ImageProps> = ({ ...props }) => {
-  return <img {...props} loading='lazy' decoding='async' />;
+const Image: React.FC<ImageProps> = ({ loading = 'lazy', ...props }) => {
+  return <img {...props} loading={loading} decoding='async' />;
 };
 
 export { Image as default };
