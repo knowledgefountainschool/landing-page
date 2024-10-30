@@ -18,26 +18,7 @@ const HeroSection = ({}: HeroSectionProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout>();
-  const [isLoaded, setIsLoaded] = useState(false);
   const optimizedImage = optimizeCloudinaryImage(media.class8.image);
-
-  // Preload critical images
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = optimizedImage;
-    document.head.appendChild(link);
-
-    const img = new Image();
-    img.src = optimizedImage;
-    img.onload = () => setIsLoaded(true);
-
-    return () => {
-      document.head.removeChild(link);
-    };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const handleTheaterMode = () => {
     setIsModalOpen(true);
@@ -62,23 +43,15 @@ const HeroSection = ({}: HeroSectionProps) => {
   return (
     <Section id='hero' className='py-5'>
       <div className='min-h-[94.5svh] relative'>
-        <div
-          className={cn(
-            'absolute inset-0 z-[2] bg-darker rounded-3xl animate-pulse',
-            isLoaded && 'hidden'
-          )}
-        />
-
         <ImageComponent
           src={optimizedImage}
           alt='cOmbination'
           className={cn(
-            ' absolute inset-0 z-[2] rounded-3xl object-cover h-full w-full transition-opacity duration-300',
-            isLoaded ? 'opacity-100' : 'opacity-0'
+            ' absolute inset-0 z-[2] rounded-3xl object-cover h-full w-full transition-opacity duration-300'
           )}
           loading='eager'
+          decoding='auto'
           fetchPriority='high'
-          onLoad={() => setIsLoaded(true)}
         />
 
         <AnimatePresence>
