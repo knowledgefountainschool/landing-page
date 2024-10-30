@@ -1,10 +1,10 @@
-interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  className?: string;
-  placeholder?: 'blur';
-  blurDataURL?: string;
-}
+interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
-const Image: React.FC<ImageProps> = ({ loading = 'lazy', decoding="async", ...props }) => {
+const Image: React.FC<ImageProps> = ({
+  loading = 'lazy',
+  decoding = 'async',
+  ...props
+}) => {
   return <img {...props} loading={loading} decoding={decoding} />;
 };
 
