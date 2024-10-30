@@ -67,7 +67,7 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
     }
 
     return generateHeights(range);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     isSmallMobile,
     isLargeMobile,
@@ -103,7 +103,7 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
             pauseOnClick
             pauseOnHover
             autoFill
-            className='space-x-3'
+            className='space-x-1.5'
             direction={direction}
             speed={speed}
           >
