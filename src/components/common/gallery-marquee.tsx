@@ -96,114 +96,115 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
   );
 
   return (
-    <div className='space-y-4'>
-      <div className='relative' style={{ height: containerHeight }}>
-        <div className='w-full absolute z-[2]'>
-          <Marquee
-            pauseOnClick
-            pauseOnHover
-            autoFill
-            className='space-x-1.5'
-            direction={direction}
-            speed={speed}
-          >
-            {galleryMarqueeMedia.map((media, index) => {
-              const height = calculatedHeights[index] ?? 30;
+    <>
+      <div className='space-y-4'>
+        <div className='relative' style={{ height: containerHeight }}>
+          <div className='w-full absolute z-[2]'>
+            <Marquee
+              pauseOnClick
+              pauseOnHover
+              autoFill
+              className='space-x-1.5'
+              direction={direction}
+              speed={speed}
+            >
+              {galleryMarqueeMedia.map((media, index) => {
+                const height = calculatedHeights[index] ?? 30;
 
-              return (
-                <motion.div
-                  className='py-2'
-                  key={index}
-                  style={{ height: `${height}vh` }}
-                  onMouseOver={() => {
-                    setHoveredImage({
-                      isActive: true,
-                      index,
-                      name: media.name,
-                      image: media.image,
-                    });
-                  }}
-                  onMouseLeave={() => {
-                    setHoveredImage({
-                      isActive: false,
-                      index,
-                      name: '',
-                      image: '',
-                    });
-                  }}
-                  variants={opacity}
-                  animate={
-                    hoveredImage.isActive && hoveredImage.index !== index
-                      ? 'open'
-                      : 'closed'
-                  }
-                >
-                  <Image
-                    src={media.image}
-                    width={2000}
-                    height={2000}
-                    onClick={() => {
-                      setClickedImage({
+                return (
+                  <motion.div
+                    className='py-2'
+                    key={index}
+                    style={{ height: `${height}vh` }}
+                    onMouseOver={() => {
+                      setHoveredImage({
                         isActive: true,
                         index,
                         name: media.name,
                         image: media.image,
                       });
-                      setIsModalOpen(true);
                     }}
-                    className={cn(
-                      'h-full w-auto aspect-auto object-contain mx-3 cursor-pointer shadow'
-                    )}
-                    fetchPriority='high'
-                    alt={media.name}
-                  />
+                    onMouseLeave={() => {
+                      setHoveredImage({
+                        isActive: false,
+                        index,
+                        name: '',
+                        image: '',
+                      });
+                    }}
+                    variants={opacity}
+                    animate={
+                      hoveredImage.isActive && hoveredImage.index !== index
+                        ? 'open'
+                        : 'closed'
+                    }
+                  >
+                    <Image
+                      src={media.image}
+                      width={2000}
+                      height={2000}
+                      onClick={() => {
+                        setClickedImage({
+                          isActive: true,
+                          index,
+                          name: media.name,
+                          image: media.image,
+                        });
+                        setIsModalOpen(true);
+                      }}
+                      className={cn(
+                        'h-full w-auto aspect-auto object-contain mx-3 cursor-pointer shadow'
+                      )}
+                      fetchPriority='high'
+                      alt={media.name}
+                    />
+                  </motion.div>
+                );
+              })}
+            </Marquee>
+          </div>
+
+          <AnimatePresence>
+            {hoveredImage?.name && (
+              <div className='w-full absolute z-[1] top-14'>
+                <motion.div className='h-full' {...anim(translate)}>
+                  <Marquee
+                    direction='right'
+                    autoFill
+                    className='h-full text-darker uppercase font-berlingske-serif text-2xl lg:text-3xl font-semibold'
+                  >
+                    <span className='mx-5'>{hoveredImage?.name}</span>
+                  </Marquee>
                 </motion.div>
-              );
-            })}
-          </Marquee>
+              </div>
+            )}
+          </AnimatePresence>
         </div>
 
-        <AnimatePresence>
-          {hoveredImage?.name && (
-            <div className='w-full absolute z-[1] top-14'>
-              <motion.div className='h-full' {...anim(translate)}>
-                <Marquee
-                  direction='right'
-                  autoFill
-                  className='h-full text-darker uppercase font-berlingske-serif text-2xl lg:text-3xl font-semibold'
-                >
-                  <span className='mx-5'>{hoveredImage?.name}</span>
-                </Marquee>
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
+        {/* Control arrows below the marquee */}
+        <div className='flex justify-center items-center gap-8'>
+          <Button
+            variant='subtle'
+            onClick={() => handleArrowClick('left')}
+            aria-label='Move left'
+          >
+            <Icons.longArrowWhite className='size-12 md:size-14 lg:size-16 xl:size-20 rotate-90' />
+          </Button>
+
+          <Button
+            variant='subtle'
+            onClick={() => handleArrowClick('right')}
+            aria-label='Move right'
+          >
+            <Icons.longArrowWhite className='size-12 md:size-14 lg:size-16 xl:size-20 -rotate-90' />
+          </Button>
+        </div>
       </div>
-
-      {/* Control arrows below the marquee */}
-      <div className='flex justify-center items-center gap-8'>
-        <Button
-          variant='subtle'
-          onClick={() => handleArrowClick('left')}
-          aria-label='Move left'
-        >
-          <Icons.longArrowWhite className='size-12 md:size-14 lg:size-16 xl:size-20 rotate-90' />
-        </Button>
-
-        <Button
-          variant='subtle'
-          onClick={() => handleArrowClick('right')}
-          aria-label='Move right'
-        >
-          <Icons.longArrowWhite className='size-12 md:size-14 lg:size-16 xl:size-20 -rotate-90' />
-        </Button>
-      </div>
-
       <AnimatePresence>
         {isModalOpen && clickedImage.image && (
           <Modal
             onClose={() => setIsModalOpen(false)}
-            className='fixed inset-0 bg-darker z-50 flex-col-center py-16 space-y-8 text-center text-white font-berlingske-serif'
+            className='bg-darker flex-col-center py-20 space-y-8 text-center text-white font-berlingske-serif'
           >
             <Image
               src={clickedImage.image}
@@ -217,7 +218,7 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
           </Modal>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 };
 

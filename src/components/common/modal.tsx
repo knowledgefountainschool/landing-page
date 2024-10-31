@@ -15,7 +15,7 @@ const Modal = ({ onClose, className, children }: ModalProps) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className={cn('fixed inset-0 bg-darker z-50', className)}
+      className={cn('fixed inset-0 z-50', className)}
     >
       <motion.button
         initial={{ opacity: 0, y: -20 }}
