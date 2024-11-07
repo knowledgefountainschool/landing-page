@@ -25,7 +25,7 @@ const NavItems = ({ data, isActive }: any) => {
       />
       <Link
         to={href}
-        className='text-white font-light font-berlingske-serif text-4xl'
+        className='text-white font-light font-cormorant-garamond text-4xl'
       >
         {title || ''}
       </Link>

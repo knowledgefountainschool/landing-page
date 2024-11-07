@@ -14,8 +14,6 @@ module.exports = {
     extend: {
       fontFamily: {
         'san-francisco': ['SF-Pro-Text', 'sans-serif'],
-        geist: ['Geist', 'sans-serif'],
-        'berlingske-serif': ['BerlingskeSerif', 'sans-serif'],
       },
       backgroundImage: {
         'brand-dark-gradient': 'linear-gradient(135deg, #b3c5d5, #2b2f46)',

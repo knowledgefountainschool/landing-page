@@ -171,7 +171,7 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
                   <Marquee
                     direction='right'
                     autoFill
-                    className='h-full text-darker uppercase font-berlingske-serif text-2xl lg:text-3xl font-semibold'
+                    className='h-full text-darker uppercase font-cormorant-garamond text-2xl lg:text-3xl font-semibold'
                   >
                     <span className='mx-5'>{hoveredImage?.name}</span>
                   </Marquee>
@@ -204,7 +204,7 @@ const GalleryMarquee = ({}: GalleryMarqueeProps) => {
         {isModalOpen && clickedImage.image && (
           <Modal
             onClose={() => setIsModalOpen(false)}
-            className='bg-darker flex-col-center py-20 space-y-8 text-center text-white font-berlingske-serif'
+            className='bg-darker flex-col-center py-20 space-y-8 text-center text-white font-cormorant-garamond'
           >
             <Image
               src={clickedImage.image}

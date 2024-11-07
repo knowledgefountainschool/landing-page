@@ -10,16 +10,8 @@ export default defineConfig({
       custom: {
         families: [
           {
-            name: 'Geist',
-            src: './src/assets/fonts/*.woff2',
-          },
-          {
             name: 'SF-Pro-Text',
             src: './src/assets/fonts/san-francisco/*.otf',
-          },
-          {
-            name: 'BerlingskeSerif',
-            src: './src/assets/fonts/berlingske-serif/*.woff2',
           },
         ],
       },

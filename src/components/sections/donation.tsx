@@ -20,7 +20,7 @@ const DonationSection = ({}: DonationSectionProps) => {
         className='bg-darker text-white relative min-h-[50svh] md:min-h-[50svh] lg:min-h-[50svh] xl:min-h-[50svh]'
       >
         <div className='flex-center text-center relative overflow-hidden h-full pb-32'>
-          <div className='p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-berlingske-serif font-semibold h-full'>
+          <div className='p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-cormorant-garamond font-semibold h-full'>
             <h1 className='uppercase tracking-[0.5em]'>
               Choose your way to make impact
             </h1>
@@ -35,7 +35,7 @@ const DonationSection = ({}: DonationSectionProps) => {
         </div>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-32 lg:gap-6 pb-32'>
-          <Card className='bg-brand text-darker font-berlingske-serif space-y-4 flex-col-center pt-8 pb-16'>
+          <Card className='bg-brand text-darker font-cormorant-garamond space-y-4 flex-col-center pt-8 pb-16'>
             <div className='flex flex-row flex-shrink-0 justify-center items-center gap-2'>
               <div className={`circle-1 ${animatedContainer}`}>
                 <MessageCircle className='size-20' />
@@ -65,7 +65,7 @@ const DonationSection = ({}: DonationSectionProps) => {
             </Link>
           </Card>
 
-          <Card className='bg-brand text-darker font-berlingske-serif space-y-4 flex-col-center pt-8 pb-16'>
+          <Card className='bg-brand text-darker font-cormorant-garamond space-y-4 flex-col-center pt-8 pb-16'>
             <div className='flex flex-row flex-shrink-0 justify-center items-center gap-2'>
               <div className={`circle-2 ${animatedContainer}`}>
                 <Gift className='size-20' />

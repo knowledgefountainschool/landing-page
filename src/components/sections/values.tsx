@@ -40,7 +40,7 @@ const ValueCard = ({
           <div className='pb-8 p-5 md:p-6 lg:p-7 xl:p-8 container mx-auto space-y-4'>
             <h3
               className={cn(
-                'font-berlingske-serif font-semibold',
+                'font-cormorant-garamond font-semibold',
                 index === 3 ? 'text-3xl lg:text-5xl' : 'text-3xl'
               )}
             >
@@ -62,7 +62,7 @@ const ValuesSection = ({}: ValuesSectionProps) => {
   return (
     <Section id='core-values' className='mt-16 mb-32'>
       <div className='py-16 lg:py-32 rounded-3xl lg:min-h-[94.5svh] bg-lighter text-darker blur-[0.1px] flex-center relative shadow overflow-hidden h-full'>
-        <div className='p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-berlingske-serif font-semibold h-full text-center'>
+        <div className='p-8 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-cormorant-garamond font-semibold h-full text-center'>
           <h1 className='uppercase tracking-[0.5em]'>Our Student Profile</h1>
           <span>
             <Icons.longArrowDarker className='size-24' />

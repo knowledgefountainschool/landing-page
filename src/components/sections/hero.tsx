@@ -85,7 +85,7 @@ const HeroSection = ({}: HeroSectionProps) => {
             <h1 className='text-sm md:text-base lg:text-lg font-normal uppercase tracking-[0.5em]'>
               {title}
             </h1>
-            <h2 className='font-berlingske-serif font-semibold text-[1.67rem] leading-[2.15rem] md:text-4xl lg:text-5xl xl:text-6xl tracking-wide pb-16 lg:pb-0'>
+            <h2 className='font-cormorant-garamond font-semibold text-[1.67rem] leading-[2.15rem] md:text-4xl lg:text-5xl xl:text-6xl tracking-wide pb-16 lg:pb-0'>
               {headline}
             </h2>
 

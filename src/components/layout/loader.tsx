@@ -114,7 +114,7 @@ export const PageLoader = ({ onLoadingComplete }: PageLoaderProps) => {
       {isVisible && (
         <motion.div
           {...anim(pageSlide)}
-          className='fixed inset-0 flex flex-col items-center justify-center bg-darker z-[999] font-berlingske-serif'
+          className='fixed inset-0 flex flex-col items-center justify-center bg-darker z-[999] font-cormorant-garamond'
         >
           <motion.div className='flex flex-col items-center justify-center space-y-8'>
             <div

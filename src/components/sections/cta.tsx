@@ -18,7 +18,7 @@ const CtaSection = ({}: CtaSectionProps) => {
           <Icons.logo className='opacity-30 h-full w-full' />
         </div> */}
 
-        <div className='p-8 lg:py-32 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-berlingske-serif font-semibold h-full'>
+        <div className='p-8 lg:py-32 container mx-auto md:max-w-[40rem] lg:max-w-[55.5rem] xl:max-w-[60rem] space-y-6 md:space-y-8 lg:space-y-10 xl:space-y-12 flex flex-col justify-center items-center font-cormorant-garamond font-semibold h-full'>
           <h1 className='uppercase tracking-[0.5em]'>Take A Tour</h1>
           <span>
             <Icons.longArrowWhite className='size-24' />
